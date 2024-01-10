@@ -39,7 +39,7 @@ The directory does not change except for the ls command itself (working director
 ## An example of using the command with a path to a file as an argument.
 ![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/acca9825-d76c-498f-b8cf-5cf54d79118d) <br>
 Working directory when command was run: /home/ <br>
-This lists all the files which have the name Hello.java in the relative path /home/lecture1/.
+This lists all the files which have the name Hello.java in the relative path lecture1/.
 
 # CAT
 ## An example of using the command with no arguments.
