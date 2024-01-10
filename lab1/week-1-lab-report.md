@@ -45,7 +45,7 @@ This lists all the files which have the name Hello.java in the relative path lec
 ## An example of using the command with no arguments.
 ![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/0725a6b3-ff0a-4a88-865d-53f02f988108) <br>
 Working directory when command was run: /home/ <br>
-I got this output because I am concatenating nothing and so it prints nothing (TRL+C to back out of the running process).
+I got this output because I am concatenating nothing and so it prints nothing (CTRL+C to back out of the running process).
 
 ## An example of using the command with a path to a directory as an argument.
 ![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/e5f44c77-04bf-44ba-9a0b-89c8c80a221c) <br>
