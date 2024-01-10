@@ -56,4 +56,4 @@ Cat tells you that lecture1/ is a directory because you cannot concatenate or pr
 ![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/9bcbc085-af96-404d-ad4f-6eb4e2ba24f8)
 ![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/f0930dd0-7e01-4d4d-8a3f-b297bfef0b39) <br>
 Working directory when command was run: /home/ <br>
-The concatenate (cat) command concatenates the text content of two files and spits them out without modifying the contents of the files.
+The concatenate (cat) command concatenates the text content of one or multiple files and spits them out without modifying the contents of the files.
