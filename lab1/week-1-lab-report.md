@@ -50,7 +50,7 @@ I got this output because I am concatenating nothing and so it prints nothing (C
 ## An example of using the command with a path to a directory as an argument.
 ![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/e5f44c77-04bf-44ba-9a0b-89c8c80a221c) <br>
 Working directory when command was run: /home/ <br>
-Cat tells you that lecture1/ is a directory because you cannot concatenate or print out a folder.
+Cat tells you that lecture1/ is a directory because you cannot concatenate or print out a folder, therefore it is an error.
 
 ## An example of using the command with a path to a file as an argument.
 ![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/9bcbc085-af96-404d-ad4f-6eb4e2ba24f8)
