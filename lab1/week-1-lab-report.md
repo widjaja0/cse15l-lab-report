@@ -11,7 +11,7 @@ Indicate whether the output is an error or not, and if it's an error, explain wh
 ```
 # CD
 # An example of using the command with no arguments.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/6476d294-e634-4c59-b7bb-6aff6537d3ca)\ 
+![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/6476d294-e634-4c59-b7bb-6aff6537d3ca) `<br>`
 Working directory when command was run: /home/
 I got this output because I am stating to change the directory to the current directory (since there are no arguments).
 
