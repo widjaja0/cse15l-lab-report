@@ -11,7 +11,7 @@ So that's 9 total examples (3 for each command). For each, include:
 ```
 # CD
 `An example of using the command with no arguments:`
-```console
+```bash
 [user@sahara ~]$ cd
 [user@sahara ~]$ 
 ```
@@ -19,7 +19,7 @@ Working directory when *cd* was run: /home/
 I got this output because I am stating to change the directory to the current directory (since there are no arguments).<br><br>
 
 `An example of using the command with a path to a directory as an argument:`
-```console
+```bash
 [user@sahara ~]$ cd lecture1/
 [user@sahara ~/lecture1]$ 
 ```
@@ -27,7 +27,7 @@ Working directory when *cd* was run: /home/
 The directory changes only after running the command, and we change the current working directory to the `lecture1` folder which has a path of /home/lecture1/<br><br>
 
 `An example of using the command with a path to a file as an argument:`
-```console
+```bash
 [user@sahara ~/lecture1]$ cd Hello.java
 bash: cd: Hello.java: Not a directory
 [user@sahara ~/lecture1]$ 
