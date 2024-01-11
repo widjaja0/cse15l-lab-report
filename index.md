@@ -1,4 +1,4 @@
-<div style="background-color:black">
+<span style="background-color:black">
 # Stylesheet Cheat Sheet
 *This is in italics.* <br> <br>
 **This is bold.**
@@ -21,4 +21,4 @@ This is a page break or a horizontal rule:
 print '3 backticks or'
 print 'indent 4 spaces'
 ```
-</div>
+</span>
