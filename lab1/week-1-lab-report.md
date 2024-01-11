@@ -11,52 +11,103 @@ So that's 9 total examples (3 for each command). For each, include:
 ```
 # CD
 ## An example of using the command with no arguments.
-```
+```console
 [user@sahara ~]$ cd
-[user@sahara ~]$
+[user@sahara ~]$ 
 ```
 Working directory when command was run: /home/ <br>
 I got this output because I am stating to change the directory to the current directory (since there are no arguments).
 
 ## An example of using the command with a path to a directory as an argument.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/56db7d46-b591-4958-b9b9-9e06b951e20b) <br>
+```console
+[user@sahara ~]$ cd lecture1/
+[user@sahara ~/lecture1]$ 
+```
 Working directory when command was run: /home/ <br>
 The directory changes only after running the command, and we change the current working directory to the `lecture1` folder which has a path of /home/lecture1/
 
 ## An example of using the command with a path to a file as an argument.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/0c0c5077-1437-4921-8330-94a340bccde0) <br>
+```console
+[user@sahara ~/lecture1]$ cd Hello.java
+bash: cd: Hello.java: Not a directory
+[user@sahara ~/lecture1]$ 
+```
 Working directory when command was run: /home/lecture1/ <br>
 This does not work because cd changes to a certain directory but a file is not a folder which you can go into, therefore it returns and error.
 
 # LS
 ## An example of using the command with no arguments.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/7c247dbe-4f1e-40e7-a333-9f539a23e20b) <br>
+```console
+[user@sahara ~]$
+lecture1
+```
 Working directory when command was run: /home/ <br>
 I got this output because I am listing the files/folders in the current directory (since there are no arguments).
 
 ## An example of using the command with a path to a directory as an argument.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/290defd6-f907-4285-b35e-fa309fd70fa4) <br>
+```console
+[user@sahara ~]$ ls lecture1/
+Hello.class Hello.java messages README
+```
 Working directory when command was run: /home/ <br>
 The directory does not change except for the ls command itself (working directory does not change), and we list the contents of the `lecture1` folder which has a path of /home/lecture1/.
 
 ## An example of using the command with a path to a file as an argument.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/acca9825-d76c-498f-b8cf-5cf54d79118d) <br>
+```console
+[user@sahara ~]$ ls lecture1/Hello.java
+lecture1/Hello.java
+```
 Working directory when command was run: /home/ <br>
 This lists all the files which have the name Hello.java in the relative path lecture1/.
 
 # CAT
 ## An example of using the command with no arguments.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/0725a6b3-ff0a-4a88-865d-53f02f988108) <br>
+```console
+[user@sahara ~]$ cat
+
+```
 Working directory when command was run: /home/ <br>
 I got this output because I am concatenating nothing and so it prints nothing (CTRL+C to back out of the running process).
 
 ## An example of using the command with a path to a directory as an argument.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/e5f44c77-04bf-44ba-9a0b-89c8c80a221c) <br>
+```console
+[user@sahara ~]$ cat lecture1/
+cat: lecture1/: Is a directory
+```
 Working directory when command was run: /home/ <br>
 Cat tells you that lecture1/ is a directory because you cannot concatenate or print out a folder, therefore it is an error.
 
 ## An example of using the command with a path to a file as an argument.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/9bcbc085-af96-404d-ad4f-6eb4e2ba24f8)
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/f0930dd0-7e01-4d4d-8a3f-b297bfef0b39) <br>
+```console
+[user@sahara ~]$ cat lecture1/Hello.java
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class Hello {
+  public static void main(String[] args) throws IOException {
+    String content = Files.readString(Path.of(args[0]), StandardCharsets.UTF_8);    
+    System.out.println(content);
+  }
+}
+```
+```console
+[user@sahara ~]$ cat lecture1/Hello.java
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class Hello {
+  public static void main(String[] args) throws IOException {
+    String content = Files.readString(Path.of(args[0]), StandardCharsets.UTF_8);    
+    System.out.println(content);
+  }
+}To use this program:
+
+javac Hello.java
+java Hello messages/en-us.txt
+```
 Working directory when command was run: /home/ <br>
 The concatenate (cat) command concatenates the text content of one or multiple files and spits them out without modifying the contents of the files.
