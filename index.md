@@ -1,3 +1,5 @@
+<span style="color:blue">some *blue* text</span>.
+
 # Stylesheet Cheat Sheet
 *This is in italics.* <br> <br>
 **This is bold.**
