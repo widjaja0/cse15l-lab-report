@@ -10,74 +10,74 @@ So that's 9 total examples (3 for each command). For each, include:
 - Indicate whether the output is an error or not, and if it's an error, explain why it's an error.
 ```
 # CD
-## An example of using the command with no arguments.
+`An example of using the command with no arguments:`
 ```console
 [user@sahara ~]$ cd
 [user@sahara ~]$ 
 ```
-Working directory when command was run: /home/ <br>
-I got this output because I am stating to change the directory to the current directory (since there are no arguments).
+Working directory when command was run: /home/  
+I got this output because I am stating to change the directory to the current directory (since there are no arguments).<br><br>
 
-## An example of using the command with a path to a directory as an argument.
+`An example of using the command with a path to a directory as an argument:`
 ```console
 [user@sahara ~]$ cd lecture1/
 [user@sahara ~/lecture1]$ 
 ```
-Working directory when command was run: /home/ <br>
-The directory changes only after running the command, and we change the current working directory to the `lecture1` folder which has a path of /home/lecture1/
+Working directory when command was run: /home/  
+The directory changes only after running the command, and we change the current working directory to the `lecture1` folder which has a path of /home/lecture1/<br><br>
 
-## An example of using the command with a path to a file as an argument.
+`An example of using the command with a path to a file as an argument:`
 ```console
 [user@sahara ~/lecture1]$ cd Hello.java
 bash: cd: Hello.java: Not a directory
 [user@sahara ~/lecture1]$ 
 ```
-Working directory when command was run: /home/lecture1/ <br>
-This does not work because cd changes to a certain directory but a file is not a folder which you can go into, therefore it returns and error.
+Working directory when command was run: /home/lecture1/  
+This does not work because cd changes to a certain directory but a file is not a folder which you can go into, therefore it returns and error.<br><br>
 
 # LS
-## An example of using the command with no arguments.
+`An example of using the command with no arguments.`
 ```console
 [user@sahara ~]$
 lecture1
 ```
-Working directory when command was run: /home/ <br>
-I got this output because I am listing the files/folders in the current directory (since there are no arguments).
+Working directory when command was run: /home/  
+I got this output because I am listing the files/folders in the current directory (since there are no arguments).<br><br>
 
-## An example of using the command with a path to a directory as an argument.
+`An example of using the command with a path to a directory as an argument.`
 ```console
 [user@sahara ~]$ ls lecture1/
 Hello.class Hello.java messages README
 ```
-Working directory when command was run: /home/ <br>
-The directory does not change except for the ls command itself (working directory does not change), and we list the contents of the `lecture1` folder which has a path of /home/lecture1/.
+Working directory when command was run: /home/  
+The directory does not change except for the ls command itself (working directory does not change), and we list the contents of the `lecture1` folder which has a path of /home/lecture1/.<br><br>
 
-## An example of using the command with a path to a file as an argument.
+`An example of using the command with a path to a file as an argument.`
 ```console
 [user@sahara ~]$ ls lecture1/Hello.java
 lecture1/Hello.java
 ```
-Working directory when command was run: /home/ <br>
-This lists all the files which have the name Hello.java in the relative path lecture1/.
+Working directory when command was run: /home/  
+This lists all the files which have the name Hello.java in the relative path lecture1/.<br><br>
 
 # CAT
-## An example of using the command with no arguments.
+`An example of using the command with no arguments.`
 ```console
 [user@sahara ~]$ cat
 
 ```
-Working directory when command was run: /home/ <br>
-I got this output because I am concatenating nothing and so it prints nothing (CTRL+C to back out of the running process).
+Working directory when command was run: /home/  
+I got this output because I am concatenating nothing and so it prints nothing (CTRL+C to back out of the running process).<br><br>
 
-## An example of using the command with a path to a directory as an argument.
+`An example of using the command with a path to a directory as an argument.`
 ```console
 [user@sahara ~]$ cat lecture1/
 cat: lecture1/: Is a directory
 ```
-Working directory when command was run: /home/ <br>
-Cat tells you that lecture1/ is a directory because you cannot concatenate or print out a folder, therefore it is an error.
+Working directory when command was run: /home/  
+Cat tells you that lecture1/ is a directory because you cannot concatenate or print out a folder, therefore it is an error.<br><br>
 
-## An example of using the command with a path to a file as an argument.
+`An example of using the command with a path to a file as an argument.`
 ```console
 [user@sahara ~]$ cat lecture1/Hello.java
 import java.io.IOException;
@@ -109,5 +109,5 @@ public class Hello {
 javac Hello.java
 java Hello messages/en-us.txt
 ```
-Working directory when command was run: /home/ <br>
-The concatenate (cat) command concatenates the text content of one or multiple files and spits them out without modifying the contents of the files.
+Working directory when command was run: /home/  
+The concatenate (cat) command concatenates the text content of one or multiple files and spits them out without modifying the contents of the files.<br><br>
