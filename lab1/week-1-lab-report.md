@@ -11,7 +11,6 @@ So that's 9 total examples (3 for each command). For each, include:
 ```
 # CD
 ## An example of using the command with no arguments.
-![image](https://github.com/widjaja0/cse15l-lab-report/assets/62527551/6476d294-e634-4c59-b7bb-6aff6537d3ca) <br>
 ```
 [user@sahara ~]$ cd
 [user@sahara ~]$
