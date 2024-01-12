@@ -37,7 +37,7 @@ This does not work and returns an error because cd changes to a certain director
 
 # LS
 `An example of using the command with no arguments.`
-```console
+```bash
 [user@sahara ~]$
 lecture1
 ```
@@ -45,7 +45,7 @@ Working directory when *ls* was run: /home
 I got this output because I am listing the files and folders (if there are any) in the current directory. It lists out the contents of the current working directory because there are no arguments.<br><br>
 
 `An example of using the command with a path to a directory as an argument.`
-```console
+```bash
 [user@sahara ~]$ ls lecture1/
 Hello.class Hello.java messages README
 ```
@@ -53,7 +53,7 @@ Working directory when *ls* was run: /home
 The working directory does not change and we list the contents (files and folders if they exist) of the `lecture1` folder which has a path of /home/lecture1.<br><br>
 
 `An example of using the command with a path to a file as an argument.`
-```console
+```bash
 [user@sahara ~]$ ls lecture1/Hello.java
 lecture1/Hello.java
 ```
@@ -62,7 +62,7 @@ This lists all the files which have the name Hello.java in the `lecture1` folder
 
 # CAT
 `An example of using the command with no arguments.`
-```console
+```bash
 [user@sahara ~]$ cat
 
 ^C
@@ -71,7 +71,7 @@ Working directory when *cat* was run: /home
 I got this output because I am concatenating nothing and so it prints nothing as I did not pass an argument. This also seems to leave the terminal to be stuck as if it is running a loop (CTRL+C to back out of the running process).<br><br>
 
 `An example of using the command with a path to a directory as an argument.`
-```console
+```bash
 [user@sahara ~]$ cat lecture1/
 cat: lecture1/: Is a directory
 ```
@@ -79,7 +79,7 @@ Working directory when *cat* was run: /home
 The cat command when you give it the path to a directory as an argument returns an error. The terminal tells you that lecture1/ is a directory because you cannot concatenate or print out a folder.<br><br>
 
 `An example of using the command with a path to a file as an argument.`
-```console
+```bash
 [user@sahara ~]$ cat lecture1/Hello.java
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -93,7 +93,7 @@ public class Hello {
   }
 }
 ```
-```console
+```bash
 [user@sahara ~]$ cat lecture1/Hello.java lecture1/README
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
