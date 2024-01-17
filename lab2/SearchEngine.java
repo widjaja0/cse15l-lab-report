@@ -32,10 +32,11 @@ class Handler implements URLHandler {
                 if (parameters[0].equals("s")) {
                     for (int i = 0; i < listOfSearches.size(); i++) {
                         if (listOfSearches.get(i).contains(parameters[1])) {
-                            searches += listOfSearches.get(i);
+                            searches += listOfSearches.get(i) + "\n";
                         }
                     }
                 }
+                return searches;
             }
             return "404 Not Found!";
         }
