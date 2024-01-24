@@ -83,7 +83,7 @@ Using the *private static final* variable `USER_START_IND = 5`, grab a substring
 
 `String.format(chat)`  
 `String.format(ERROR_URL)`  
-The format method is a *static* class called on *String* which returns a formatted *String*.  
+The format method is a *static* class called on *String* which returns a formatted *String*. *chat* is the chatlog stored on the server, while *ERROR_URL* is a string to be used to handle cases with invalid urls.  
 
 `Integer.parseInt(args[0])`  
 This method parses the first argument passed to *CheckServer.java* as the port number to start the server.  
@@ -120,23 +120,14 @@ and the handleRequest() methodmethod
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
 `String chat = "";`  
-The chat object is initialized as empty everytime the server is booted up, however this may change depending on the user input in the url of the page.
+In this instance, whatever has been concatenated to *chat* while the server has been running will print out onto the screen.  
 
 `.contains("/add-message")`  
 The contains method searches a *String* object for the argument *"/add-message"*.  
 
-`.split("&")`  
-The split method splits a *String* object into a *String[]* array.  
-
-`.substring(MESSAGE_START_IND)`  
-Using the *private static final* variable `MESSAGE_START_IND = 2`, grab a substring to the first part of the query that will be the user's message.  
-
-`.substring(USER_START_IND)`  
-Using the *private static final* variable `USER_START_IND = 5`, grab a substring to the second part of the query that will be the user's name.  
-
 `String.format(chat)`  
 `String.format(ERROR_URL)`  
-The format method is a *static* class called on *String* which returns a formatted *String*.  
+The format method is a *static* class called on *String* which returns a formatted *String*. *chat* is the chatlog stored on the server, while *ERROR_URL* is a string to be used to handle cases with invalid urls.  
 
 `Integer.parseInt(args[0])`  
 This method parses the first argument passed to *CheckServer.java* as the port number to start the server.  
