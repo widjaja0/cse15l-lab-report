@@ -58,7 +58,6 @@ class ChatServer {
 
 > Which methods in the code are called?  
 
-Some of the methods that were called in this code were: 
 ```java
 url.getPath(), .contains(), url.getQuery(), .split(), 
 .substring(), String.format(), Integer.parseInt(), Server.start(), 
@@ -67,38 +66,37 @@ the main() method, and the handleRequest() method
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
-Some of the relevant arguments to these methods include:  
-.contains("/add-message")  
+**.contains("/add-message")**  
 The contains method searches a String object for the argument "/add-message".  
 
-.split("&")  
+**.split("&")**  
 The split method splits a String object into a String[] array.  
 
-.substring(MESSAGE_START_IND)  
+**.substring(MESSAGE_START_IND)**  
 Using the private static final variable MESSAGE_START_IND = 2, grab a substring to the first part of the query that will be the user's message.  
 
-.substring(USER_START_IND)  
+**.substring(USER_START_IND)**  
 Using the private static final variable USER_START_IND = 5, grab a substring to the second part of the query that will be the user's name.  
 
-String.format(chat)  
-String.format(ERROR_URL)  
+**String.format(chat)**  
+**String.format(ERROR_URL)**  
 The format method is a static class called on String which returns a formatted String.  
 
-Integer.parseInt(args[0])  
+**Integer.parseInt(args[0])**  
 This method parses the first argument passed to `CheckServer.java` as the port number to start the server.  
 
-Server.start(port, new Handler())  
+**Server.start(port, new Handler())**  
 This method starts the server with port that was parsed as an Integer and instantiates a new Handler() to start the server.  
 
-main(String[] args)  
+**main(String[] args)**  
 The main method that is run when running `ChatServer.java`.  
 
-handleRequest(URI url)  
+**handleRequest(URI url)**  
 The handleRequest method handles the requests that are inputted by the user into the url and everytime the page is loaded, this method gets called.  
 
 > How do the values of any relevant fields of the class change from this specific request?  
 
-The *chat* String field of the class changed from this request to *"Widjaja: I like cats!"* The other fields did not change because they are static final variables. I entered in the URL as `"http://localhost:4000/add-message?s=I like cats!&user=Widjaja"` but it changed to `"http://localhost:4000/add-message?s=I%20like%20cats!&user=Widjaja"`  
+The *chat* String field of the class changed from this request to *"Widjaja: I like cats!"* The other fields did not change because they are static final variables. I entered in the URL as `"http://localhost:4000/add-message?s=I like cats!&user=Widjaja"` but it changed to `"http://localhost:4000/add-message?s=I%20like%20cats!&user=Widjaja"` to account for the spaces. When the query changes for `/add-message/?s=<string>&user=<string>`, the url URI object that is passed into handleRequest() also changes to reflect the contents of the url.  
 <br>
 
 `Screenshot 2:` <br>
@@ -107,18 +105,41 @@ The *chat* String field of the class changed from this request to *"Widjaja: I l
 > Which methods in this code are called?  
 
 ```java
-url().getPath(), String.contains(), url.getQuery(), 
-String.format(), Integer.parseInt(), Server.start(), 
-the main() method, and the handleRequest() methodmethod
+url.getPath(), .contains(), url.getQuery(), String.format(), 
+Integer.parseInt(), Server.start(), the main() method, 
+and the handleRequest() methodmethod
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
-A
+**.contains("/add-message")**  
+The contains method searches a String object for the argument "/add-message".  
+
+**.split("&")**  
+The split method splits a String object into a String[] array.  
+
+**.substring(MESSAGE_START_IND)**  
+Using the private static final variable MESSAGE_START_IND = 2, grab a substring to the first part of the query that will be the user's message.  
+
+**.substring(USER_START_IND)**  
+Using the private static final variable USER_START_IND = 5, grab a substring to the second part of the query that will be the user's name.  
+
+**String.format(chat)**  
+**String.format(ERROR_URL)**  
+The format method is a static class called on String which returns a formatted String.  
+
+**Integer.parseInt(args[0])**  
+This method parses the first argument passed to `CheckServer.java` as the port number to start the server.  
+
+**Server.start(port, new Handler())**  
+This method starts the server with port that was parsed as an Integer and instantiates a new Handler() to start the server.  
+
+**main(String[] args)**  
+The main method that is run when running `ChatServer.java`.  
 
 > How do the values of any relevant fields of the class change from this specific request?  
 
-No values of the *chat* String field changed from this request to the `/add-message` page. The other fields did not change because they are static final variables. The url did not change either.  
+The *chat* String field did not change from this request to the `/add-message` page, and neither did the other fields change because they are static final variables. The url did not change either as the intended (and actual) output is to simply print the *chat* String.  
 <br>
 
 # Part 2 - SSH  
