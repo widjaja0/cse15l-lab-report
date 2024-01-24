@@ -136,6 +136,8 @@ These are all *private static final* variables that are not meant to be changed 
 # Part 2 - SSH  
 In this part of the lab, we use the **ls** command in a terminal to demonstrate our usage and understanding of SSH.
 
+---
+
 > The absolute path to the private key for my SSH key for logging into ieng6 **(on my computer)**.  <br>
 C:/Users/Widjaja/.ssh/id_rsa  
 
