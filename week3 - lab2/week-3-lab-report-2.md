@@ -97,7 +97,7 @@ The main method that is run when running `ChatServer.java`.
 **handleRequest(URI url)**  
 The handleRequest method handles the requests that are inputted by the user into the url and everytime the page is loaded, this method gets called.  
 
-**MESSAGE_START_IND = 2; USER_START_IND = 5; NEWLINE = "\n"; COLON_MESSAGE = ": "; ERROR_URL = "404 not found!";**
+`**MESSAGE_START_IND = 2; USER_START_IND = 5; NEWLINE = "\n"; COLON_MESSAGE = ": "; ERROR_URL = "404 not found!";**`  
 These are all private static final variables that are not meant to be changed but are meant to be used in the code as a way to avoid using "Magic Numbers" for proper Java style convention.  
 <br>
 
