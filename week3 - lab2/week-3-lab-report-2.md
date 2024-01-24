@@ -53,7 +53,7 @@ class ChatServer {
 <br>
 
 ## Two screenshots using "/add-message":
-`Screenshot 1:` <br>
+**Screenshot 1:** <br>
 ![/add-message](image-4.png)
 
 > Which methods in the code are called?  
@@ -86,7 +86,7 @@ The *chat String* field of the class changed from this request to *"Widjaja: I l
 
 ---
 
-`Screenshot 2:` <br>
+**Screenshot 2:** <br>
 ![/add-message 2](image-5.png)
 
 > Which methods in this code are called?  
