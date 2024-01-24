@@ -1,5 +1,4 @@
 # Lab Report 2  
-> [INSTRUCTIONS TO THIS LAB](https://ucsd-cse15l-w24.github.io/week3/index.html#lab-report-2---servers-and-ssh-keys-week-3)  
 <a href="https://ucsd-cse15l-w24.github.io/week3/index.html#lab-report-2---servers-and-ssh-keys-week-3" target="_blank">INSTRUCTIONS TO THIS LAB</a>
 
 # Part 1 - Chat Server  
