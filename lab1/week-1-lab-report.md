@@ -24,7 +24,7 @@ So that's 9 total examples (3 for each command). For each, include:
 [user@sahara ~/lecture1/messages]$ cd 
 [user@sahara ~]$ 
 ```
-Working directory when *cd* was run: (1) /home (2) /home/lecture1 (3) /home/lecture1/messages
+Working directory when *cd* was run: (1) /home (2) /home/lecture1 (3) /home/lecture1/messages  
 We get this output because *cd* without any arguments changes the current working directory to the root or the home directory. This output is not an error.<br><br>
 
 `An example of using the command with a path to a directory as an argument:`
