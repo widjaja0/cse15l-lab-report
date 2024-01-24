@@ -66,7 +66,7 @@ the main() method, and the handleRequest() method
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
-`String chat = "";`
+`String chat = "";`  
 The chat object is initialized as empty everytime the server is booted up, however this may change depending on the user input in the url of the page.
 
 `.contains("/add-message")`  
@@ -119,7 +119,7 @@ and the handleRequest() methodmethod
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
-`String chat = "";`
+`String chat = "";`  
 The chat object is initialized as empty everytime the server is booted up, however this may change depending on the user input in the url of the page.
 
 `.contains("/add-message")`  
