@@ -1,44 +1,28 @@
 import java.io.IOException;
 import java.net.URI;
-import java.util.ArrayList;
 
 class Handler implements URLHandler {
-    // The one bit of state on the server: a number that will be manipulated by
-    // various requests.
-    int num = 0;
-    ArrayList<String> listOfSearches = new ArrayList<>();
+    private static final String NEWLINE = "\n";
+    private static final String COLON_MESSAGE = ": ";
+    private static final String INVALID_URL_PROMPT = "Invalid url!";
+    private static final String ERROR_URL = "404 not found!";
+
+    String chat = "";
 
     public String handleRequest(URI url) {
-        if (url.getPath().equals("/")) {
-            return String.format("Number: %d", num);
-        } else if (url.getPath().equals("/increment")) {
-            num += 1;
-            return String.format("Number incremented!");
-        } else {
-            if (url.getPath().contains("/add")) {
-                String[] parameters = url.getQuery().split("=");
-                if (parameters[0].equals("count")) {
-                    num += Integer.parseInt(parameters[1]);
-                    return String.format("Number increased by %s! It's now %d", parameters[1], num);
-                }
-                else if (parameters[0].equals("s")) {
-                    listOfSearches.add(parameters[1]);
-                    return String.format("Searched for %s", parameters[1]);
-                }
+        if (url.getPath().contains("/add-message")) {
+            String[] parameters = url.getQuery().split("&");
+            if(parameters[0].contains("s=") && parameters[1].contains("user=")) {
+                this.chat += parameters[1].split("user=")[1] + COLON_MESSAGE 
+                    + parameters[0].split("s=")[1] + NEWLINE;
+                return String.format(chat);
             }
-            else if (url.getPath().contains("/search")) {
-                String[] parameters = url.getQuery().split("=");
-                String searches = "";
-                if (parameters[0].equals("s")) {
-                    for (int i = 0; i < listOfSearches.size(); i++) {
-                        if (listOfSearches.get(i).contains(parameters[1])) {
-                            searches += listOfSearches.get(i) + "\n";
-                        }
-                    }
-                }
-                return searches;
+            else {
+                return String.format(INVALID_URL_PROMPT);
             }
-            return "404 Not Found!";
+        }
+        else {
+            return String.format(ERROR_URL);
         }
     }
 }
