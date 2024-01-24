@@ -60,7 +60,9 @@ class ChatServer {
 
 Some of the methods that were called in this code were: 
 ```java
-url().getPath(), String.contains(), url.getQuery(), String.format(), String.split(), String.substring(), Integer.parseInt(), Server.start(), the main() method, and the handleRequest() method
+url().getPath(), String.contains(), url.getQuery(), String.format(), 
+String.split(), String.substring(), Integer.parseInt(), Server.start(), 
+the main() method, and the handleRequest() method
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
@@ -78,7 +80,9 @@ The *chat* String field of the class changed from this request to *"Widjaja: I l
 > Which methods in your code are called?  
 
 ```java
-url().getPath(), String.contains(), url.getQuery(), String.format(), Integer.parseInt(), Server.start(), the main() method, and the handleRequest() methodmethod
+url().getPath(), String.contains(), url.getQuery(), 
+String.format(), Integer.parseInt(), Server.start(), 
+the main() method, and the handleRequest() methodmethod
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
