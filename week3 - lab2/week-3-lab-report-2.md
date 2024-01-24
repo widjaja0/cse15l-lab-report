@@ -54,7 +54,7 @@ class ChatServer {
 
 ## Two screenshots using "/add-message":
 **Screenshot 1:** <br>
-![/add-message](image-4.png)
+![/add-message 1](image-4.png)
 
 > Which methods in the code are called?  
 
