@@ -2,7 +2,7 @@
 <a href="https://ucsd-cse15l-w24.github.io/week3/index.html#lab-report-2---servers-and-ssh-keys-week-3" target="_blank">INSTRUCTIONS TO THIS LAB</a>
 
 # Part 1 - Chat Server  
-In this lab (lab report 2), we build a chat server that is be able to take in a url and detect if that path contains "/add-message" followed by a query that is formatted as such: `?s=<string>&user=<string>`. This will concatenate the message to a String containing the name of the user followed by the user's message in the form: `<user>: <message>`. This will print to the page when the url contains "/add-message".  
+In this lab (lab report 2), we build a chat server that is be able to take in a url and detect if that path contains *"/add-message"* followed by a query that is formatted as such: `?s=<string>&user=<string>`. This will concatenate the message to a String containing the name of the user followed by the user's message in the form: `<user>: <message>`. This will print to the page when the url contains *"/add-message"*.  
 <br>
 
 ## Code block for the Chat Server:
@@ -66,39 +66,39 @@ the main() method, and the handleRequest() method
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
-**String chat = "";**
+`String chat = "";`
 The chat object is initialized as empty everytime the server is booted up, however this may change depending on the user input in the url of the page.
 
-**.contains("/add-message")**  
-The contains method searches a String object for the argument "/add-message".  
+`.contains("/add-message")`  
+The contains method searches a *String* object for the argument *"/add-message"*.  
 
-**.split("&")**  
-The split method splits a String object into a String[] array.  
+`.split("&")`  
+The split method splits a *String* object into a *String[]* array.  
 
-**.substring(MESSAGE_START_IND)**  
-Using the private static final variable MESSAGE_START_IND = 2, grab a substring to the first part of the query that will be the user's message.  
+`.substring(MESSAGE_START_IND)`  
+Using the *private static final* variable `MESSAGE_START_IND = 2`, grab a substring to the first part of the query that will be the user's message.  
 
-**.substring(USER_START_IND)**  
-Using the private static final variable USER_START_IND = 5, grab a substring to the second part of the query that will be the user's name.  
+`.substring(USER_START_IND)`  
+Using the *private static final* variable `USER_START_IND = 5`, grab a substring to the second part of the query that will be the user's name.  
 
-**String.format(chat)**  
-**String.format(ERROR_URL)**  
-The format method is a static class called on String which returns a formatted String.  
+`String.format(chat)`  
+`String.format(ERROR_URL)`  
+The format method is a *static* class called on *String* which returns a formatted *String*.  
 
-**Integer.parseInt(args[0])**  
-This method parses the first argument passed to `CheckServer.java` as the port number to start the server.  
+`Integer.parseInt(args[0])`  
+This method parses the first argument passed to *CheckServer.java* as the port number to start the server.  
 
-**Server.start(port, new Handler())**  
-This method starts the server with port that was parsed as an Integer and instantiates a new Handler() to start the server.  
+`Server.start(port, new Handler())`  
+This method starts the server with port that was parsed as an *Integer* and instantiates a *new Handler()* to start the server.  
 
-**main(String[] args)**  
-The main method that is run when running `ChatServer.java`.  
+`main(String[] args)`  
+The main method that is run when running *ChatServer.java*.  
 
-**handleRequest(URI url)**  
-The handleRequest method handles the requests that are inputted by the user into the url and everytime the page is loaded, this method gets called.  
+`handleRequest(URI url)`  
+The *handleRequest()* method handles the requests that are inputted by the user into the url and everytime the page is loaded, this method gets called.  
 
-`**MESSAGE_START_IND = 2; USER_START_IND = 5; NEWLINE = "\n"; COLON_MESSAGE = ": "; ERROR_URL = "404 not found!";**`  
-These are all private static final variables that are not meant to be changed but are meant to be used in the code as a way to avoid using "Magic Numbers" for proper Java style convention.  
+`MESSAGE_START_IND = 2; USER_START_IND = 5; NEWLINE = "\n"; COLON_MESSAGE = ": "; ERROR_URL = "404 not found!";`  
+These are all *private static final* variables that are not meant to be changed but are meant to be used in the code as a way to avoid using "Magic Numbers" for proper Java style convention.  
 <br>
 
 > How do the values of any relevant fields of the class change from this specific request?  
@@ -119,36 +119,39 @@ and the handleRequest() methodmethod
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
-**String chat = "";**
+`String chat = "";`
 The chat object is initialized as empty everytime the server is booted up, however this may change depending on the user input in the url of the page.
 
-**.contains("/add-message")**  
-The contains method searches a String object for the argument "/add-message".  
+`.contains("/add-message")`  
+The contains method searches a *String* object for the argument *"/add-message"*.  
 
-**.split("&")**  
-The split method splits a String object into a String[] array.  
+`.split("&")`  
+The split method splits a *String* object into a *String[]* array.  
 
-**.substring(MESSAGE_START_IND)**  
-Using the private static final variable MESSAGE_START_IND = 2, grab a substring to the first part of the query that will be the user's message.  
+`.substring(MESSAGE_START_IND)`  
+Using the *private static final* variable `MESSAGE_START_IND = 2`, grab a substring to the first part of the query that will be the user's message.  
 
-**.substring(USER_START_IND)**  
-Using the private static final variable USER_START_IND = 5, grab a substring to the second part of the query that will be the user's name.  
+`.substring(USER_START_IND)`  
+Using the *private static final* variable `USER_START_IND = 5`, grab a substring to the second part of the query that will be the user's name.  
 
-**String.format(chat)**  
-**String.format(ERROR_URL)**  
-The format method is a static class called on String which returns a formatted String.  
+`String.format(chat)`  
+`String.format(ERROR_URL)`  
+The format method is a *static* class called on *String* which returns a formatted *String*.  
 
-**Integer.parseInt(args[0])**  
-This method parses the first argument passed to `CheckServer.java` as the port number to start the server.  
+`Integer.parseInt(args[0])`  
+This method parses the first argument passed to *CheckServer.java* as the port number to start the server.  
 
-**Server.start(port, new Handler())**  
-This method starts the server with port that was parsed as an Integer and instantiates a new Handler() to start the server.  
+`Server.start(port, new Handler())`  
+This method starts the server with port that was parsed as an *Integer* and instantiates a *new Handler()* to start the server.  
 
-**main(String[] args)**  
-The main method that is run when running `ChatServer.java`.  
+`main(String[] args)`  
+The main method that is run when running *ChatServer.java*.  
 
-**MESSAGE_START_IND = 2; USER_START_IND = 5; NEWLINE = "\n"; COLON_MESSAGE = ": "; ERROR_URL = "404 not found!";**
-These are all private static final variables that are not meant to be changed but are meant to be used in the code as a way to avoid using "Magic Numbers" for proper Java style convention.  
+`handleRequest(URI url)`  
+The *handleRequest()* method handles the requests that are inputted by the user into the url and everytime the page is loaded, this method gets called.  
+
+`MESSAGE_START_IND = 2; USER_START_IND = 5; NEWLINE = "\n"; COLON_MESSAGE = ": "; ERROR_URL = "404 not found!";`  
+These are all *private static final* variables that are not meant to be changed but are meant to be used in the code as a way to avoid using "Magic Numbers" for proper Java style convention.  
 <br>
 
 > How do the values of any relevant fields of the class change from this specific request?  
