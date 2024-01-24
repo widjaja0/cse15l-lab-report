@@ -41,15 +41,15 @@ How do the values of any relevant fields of the class change from this specific 
 # Part 2 - SSH  
 In this part of the lab, we use the ls command in a terminal to demonstrate our usage and understanding of SSH.
 
-> The absolute path to the private key for your SSH key for logging into ieng6 (on your computer, an EdStem workspace, or on the home directory of the lab computer)  
+> The absolute path to the private key for my SSH key for logging into ieng6 *(on my computer)*.  
 LINK  
 <br>
 
-> The absolute path to the public key for your SSH key for logging into ieng6 (this is the one you copied to your account on ieng6, so it should be a path on ieng6's file system)  
+> The absolute path to the public key for my SSH key for logging into ieng6 *(on ieng6)*.  
 LINK  
 <br>
 
-> A terminal interaction where you log into your ieng6 account without being asked for a password.  
+> A terminal interaction where I log into my ieng6 account without being asked for a password *(on my computer)*.  
 LINK  
 <br>
 
