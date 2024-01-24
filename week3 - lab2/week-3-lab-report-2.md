@@ -141,18 +141,15 @@ In this part of the lab, we use the **ls** command in a terminal to demonstrate 
 C:/Users/Widjaja/.ssh/id_rsa  
 
 ![Absolute path to private key on my computer.](image-2.png)  
-<br>
 
 > The absolute path to the public key for my SSH key for logging into ieng6 **(on ieng6)**.  <br>
 /home/linux/ieng6/oce/9f/wiwidjaja/.ssh/authorized_keys  
 
 ![Absolute path to public key on ieng6.](image-1.png)  
-<br>
 
 > A terminal interaction where I log into my ieng6 account without being asked for a password **(on my computer)**.  <br>
 
-![Terminal interaction.](image-3.png)
-<br>
+![Terminal interaction.](image-3.png)  
 
 # Part 3 - Something I Did Not Know...  
 Something that I learned from lab in week 2 that I did not know before was: **"What the heck is a secure shell?"**  
