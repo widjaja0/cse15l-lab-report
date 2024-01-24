@@ -11,28 +11,29 @@ import java.io.IOException;
 import java.net.URI;
 
 class Handler implements URLHandler {
+    private static final int MESSAGE_START_IND = 2;
+    private static final int USER_START_IND = 5;
     private static final String NEWLINE = "\n";
     private static final String COLON_MESSAGE = ": ";
-    private static final String INVALID_URL_PROMPT = "Invalid url!";
     private static final String ERROR_URL = "404 not found!";
 
     String chat = "";
 
     public String handleRequest(URI url) {
         if (url.getPath().contains("/add-message")) {
-            String[] parameters = url.getQuery().split("&");
-            if(parameters[0].contains("s=") && parameters[1].contains("user=")) {
-                this.chat += parameters[1].split("user=")[1] + COLON_MESSAGE 
-                    + parameters[0].split("s=")[1] + NEWLINE;
+            if (url.getQuery() == null) {
                 return String.format(chat);
             }
-            else {
-                return String.format(INVALID_URL_PROMPT);
-            }
+
+            String[] query = url.getQuery().split("&");
+            String user = query[1].substring(USER_START_IND);
+            String message = query[0].substring(MESSAGE_START_IND);
+            
+            this.chat += user + COLON_MESSAGE + message + NEWLINE;
+            
+            return String.format(chat);
         }
-        else {
-            return String.format(ERROR_URL);
-        }
+        return String.format(ERROR_URL);
     }
 }
 
@@ -61,7 +62,7 @@ Which methods in your code are called?
 What are the relevant arguments to those methods, and the values of any relevant fields of the class?
 
 
-How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
+How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why. By values, we mean specific Strings, ints, URIs, and so on. "abc" is a value, 456 is a value, new URI("http://...") is a value, and so on.  
 END TEXT  
 <br>
 
@@ -74,8 +75,8 @@ Which methods in your code are called?
 What are the relevant arguments to those methods, and the values of any relevant fields of the class?
 
 
-How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
-
+How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why. By values, we mean specific Strings, ints, URIs, and so on. "abc" is a value, 456 is a value, new URI("http://...") is a value, and so on.  
+END TEXT  
 <br>
 
 # Part 2 - SSH  
