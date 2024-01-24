@@ -26,8 +26,8 @@ class Handler implements URLHandler {
             }
 
             String[] query = url.getQuery().split("&");
-            String user = query[1].substring(USER_START_IND);
             String message = query[0].substring(MESSAGE_START_IND);
+            String user = query[1].substring(USER_START_IND);
             
             this.chat += user + COLON_MESSAGE + message + NEWLINE;
             
@@ -56,18 +56,46 @@ class ChatServer {
 `Screenshot 1:` <br>
 ![/add-message](image-4.png)
 
-> Which methods in your code are called?  
+> Which methods in the code are called?  
 
 Some of the methods that were called in this code were: 
 ```java
-url().getPath(), String.contains(), url.getQuery(), String.format(), 
-String.split(), String.substring(), Integer.parseInt(), Server.start(), 
+url.getPath(), .contains(), url.getQuery(), .split(), 
+.substring(), String.format(), Integer.parseInt(), Server.start(), 
 the main() method, and the handleRequest() method
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
-A
+Some of the relevant arguments to these methods include:
+.contains("/add-message")
+The contains method searches a String object for the argument "/add-message".
+
+.split("&")
+The split method splits a String object into a String[] array.
+
+.substring(MESSAGE_START_IND)
+Using the private static final variable MESSAGE_START_IND = 2, grab a substring to the first part of the query that will be the user's message.
+
+.substring(USER_START_IND)
+Using the private static final variable USER_START_IND = 5, grab a substring to the second part of the query that will be the user's name.
+
+String.format(chat)
+String.format(ERROR_URL)
+The format method is a static class called on String which returns a formatted String.
+
+Integer.parseInt(args[0])
+This method parses the first argument passed to `CheckServer.java` as the port number to start the server.
+
+Server.start(port, new Handler())
+This method starts the server with port that was parsed as an Integer and instantiates a new Handler() to start the server.
+
+main(String[] args)
+The main method that is run when running `ChatServer.java`.
+
+handleRequest(URI url)
+The handleRequest method handles the requests that are inputted by the user into the url 
+
 
 > How do the values of any relevant fields of the class change from this specific request?  
 
@@ -77,7 +105,7 @@ The *chat* String field of the class changed from this request to *"Widjaja: I l
 `Screenshot 2:` <br>
 ![/add-message 2](image-5.png)
 
-> Which methods in your code are called?  
+> Which methods in this code are called?  
 
 ```java
 url().getPath(), String.contains(), url.getQuery(), 

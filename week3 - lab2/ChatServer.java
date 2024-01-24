@@ -17,8 +17,8 @@ class Handler implements URLHandler {
             }
 
             String[] query = url.getQuery().split("&");
-            String user = query[1].substring(USER_START_IND);
             String message = query[0].substring(MESSAGE_START_IND);
+            String user = query[1].substring(USER_START_IND);
             
             this.chat += user + COLON_MESSAGE + message + NEWLINE;
             
