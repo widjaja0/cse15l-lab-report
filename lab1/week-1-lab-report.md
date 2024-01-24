@@ -1,3 +1,4 @@
+# Lab Report 1  
 ```
 For each of the commands cd, ls, and cat, and using the workspace you created in this lab:
 - Share an example of using the command with no arguments.
