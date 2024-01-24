@@ -107,7 +107,7 @@ The *chat String* field did not change from this request to the *"/add-message"*
 
 ---
 
-> Methods that are called the same between *"/add-message"* calls  
+### Methods that are called the same between *"/add-message"* calls  
 
 `.contains("/add-message")`  
 The contains method searches a *String* object for the argument *"/add-message"*.  
