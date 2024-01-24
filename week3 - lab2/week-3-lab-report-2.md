@@ -41,17 +41,17 @@ How do the values of any relevant fields of the class change from this specific 
 # Part 2 - SSH  
 In this part of the lab, we use the **ls** command in a terminal to demonstrate our usage and understanding of SSH.
 
-> The absolute path to the private key for my SSH key for logging into ieng6 **(on my computer)**.  
-C:/Users/Widjaja/.ssh/id_rsa
+> The absolute path to the private key for my SSH key for logging into ieng6 **(on my computer)**.  <br>
+C:/Users/Widjaja/.ssh/id_rsa  
 ![Absolute path to private key on my computer.](image-2.png)  
 <br>
 
-> The absolute path to the public key for my SSH key for logging into ieng6 **(on ieng6)**.  
-/home/linux/ieng6/oce/9f/wiwidjaja/.ssh/authorized_keys
+> The absolute path to the public key for my SSH key for logging into ieng6 **(on ieng6)**.  <br>
+/home/linux/ieng6/oce/9f/wiwidjaja/.ssh/authorized_keys  
 ![Absolute path to public key on ieng6.](image-1.png)  
 <br>
 
-> A terminal interaction where I log into my ieng6 account without being asked for a password **(on my computer)**.  
+> A terminal interaction where I log into my ieng6 account without being asked for a password **(on my computer)**.  <br>
 ![Terminal interaction.](image-3.png)
 <br>
 
