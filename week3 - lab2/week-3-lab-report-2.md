@@ -5,13 +5,13 @@
 In this lab (lab report 2), we build a chat server that is be able to take in a url and detect if that path contains "/add-message" followed by a query that is formatted as such: `?s=<string>&user=<string>`. This will concatenate the message to a String containing the name of the user followed by the user's message in the form: `<user>: <message>`. This will print to the page when the url contains "/add-message".  
 <br>
 
-## This is the code block for the Chat Server:
+## Code block for the Chat Server:
 ```java
 
 ```  
 <br>
 
-## These are two screenshots using "/add-message":
+## Two screenshots using "/add-message":
 `Screenshot 1:` <br>
 LINK
 
