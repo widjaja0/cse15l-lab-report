@@ -47,7 +47,7 @@ This does not work and returns an error because cd changes to a certain director
 # LS
 `An example of using the command with no arguments.`
 ```bash
-[user@sahara ~]$
+[user@sahara ~]$ ls
 lecture1
 ```
 Working directory when *ls* was run: /home  
