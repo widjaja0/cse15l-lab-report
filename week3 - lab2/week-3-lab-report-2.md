@@ -67,35 +67,34 @@ the main() method, and the handleRequest() method
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
-Some of the relevant arguments to these methods include:
-.contains("/add-message")
-The contains method searches a String object for the argument "/add-message".
+Some of the relevant arguments to these methods include:  
+.contains("/add-message")  
+The contains method searches a String object for the argument "/add-message".  
 
-.split("&")
-The split method splits a String object into a String[] array.
+.split("&")  
+The split method splits a String object into a String[] array.  
 
-.substring(MESSAGE_START_IND)
-Using the private static final variable MESSAGE_START_IND = 2, grab a substring to the first part of the query that will be the user's message.
+.substring(MESSAGE_START_IND)  
+Using the private static final variable MESSAGE_START_IND = 2, grab a substring to the first part of the query that will be the user's message.  
 
-.substring(USER_START_IND)
-Using the private static final variable USER_START_IND = 5, grab a substring to the second part of the query that will be the user's name.
+.substring(USER_START_IND)  
+Using the private static final variable USER_START_IND = 5, grab a substring to the second part of the query that will be the user's name.  
 
-String.format(chat)
-String.format(ERROR_URL)
-The format method is a static class called on String which returns a formatted String.
+String.format(chat)  
+String.format(ERROR_URL)  
+The format method is a static class called on String which returns a formatted String.  
 
-Integer.parseInt(args[0])
-This method parses the first argument passed to `CheckServer.java` as the port number to start the server.
+Integer.parseInt(args[0])  
+This method parses the first argument passed to `CheckServer.java` as the port number to start the server.  
 
-Server.start(port, new Handler())
-This method starts the server with port that was parsed as an Integer and instantiates a new Handler() to start the server.
+Server.start(port, new Handler())  
+This method starts the server with port that was parsed as an Integer and instantiates a new Handler() to start the server.  
 
-main(String[] args)
-The main method that is run when running `ChatServer.java`.
+main(String[] args)  
+The main method that is run when running `ChatServer.java`.  
 
-handleRequest(URI url)
-The handleRequest method handles the requests that are inputted by the user into the url 
-
+handleRequest(URI url)  
+The handleRequest method handles the requests that are inputted by the user into the url and everytime the page is loaded, this method gets called.  
 
 > How do the values of any relevant fields of the class change from this specific request?  
 
