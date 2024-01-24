@@ -54,9 +54,10 @@ class ChatServer {
 
 ## Two screenshots using "/add-message":
 `Screenshot 1:` <br>
-![/add-message 1](image-4.png)
+![/add-message](image-4.png)
 
 > Which methods in your code are called?  
+
 Some of the methods that were called in this code were: 
 ```java
 url().getPath(), String.contains(), url.getQuery(), String.format(), String.split(), String.substring(), Integer.parseInt(), Server.start(), the main() method, and the handleRequest() method
@@ -64,8 +65,10 @@ url().getPath(), String.contains(), url.getQuery(), String.format(), String.spli
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
+A
 
 > How do the values of any relevant fields of the class change from this specific request?  
+
 The *chat* String field of the class changed from this request to *"Widjaja: I like cats!"* The other fields did not change because they are static final variables. I entered in the URL as `"http://localhost:4000/add-message?s=I like cats!&user=Widjaja"` but it changed to `"http://localhost:4000/add-message?s=I%20like%20cats!&user=Widjaja"`  
 <br>
 
@@ -73,14 +76,17 @@ The *chat* String field of the class changed from this request to *"Widjaja: I l
 ![/add-message 2](image-5.png)
 
 > Which methods in your code are called?  
+
 ```java
 url().getPath(), String.contains(), url.getQuery(), String.format(), Integer.parseInt(), Server.start(), the main() method, and the handleRequest() methodmethod
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
+A
 
 > How do the values of any relevant fields of the class change from this specific request?  
+
 No values of the *chat* String field changed from this request to the `/add-message` page. The other fields did not change because they are static final variables. The url did not change either.  
 <br>
 
