@@ -66,6 +66,9 @@ the main() method, and the handleRequest() method
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
 
+**String chat = "";**
+The chat object is initialized as empty everytime the server is booted up, however this may change depending on the user input in the url of the page.
+
 **.contains("/add-message")**  
 The contains method searches a String object for the argument "/add-message".  
 
@@ -94,6 +97,10 @@ The main method that is run when running `ChatServer.java`.
 **handleRequest(URI url)**  
 The handleRequest method handles the requests that are inputted by the user into the url and everytime the page is loaded, this method gets called.  
 
+**MESSAGE_START_IND = 2; USER_START_IND = 5; NEWLINE = "\n"; COLON_MESSAGE = ": "; ERROR_URL = "404 not found!";**
+These are all private static final variables that are not meant to be changed but are meant to be used in the code as a way to avoid using "Magic Numbers" for proper Java style convention.  
+<br>
+
 > How do the values of any relevant fields of the class change from this specific request?  
 
 The *chat* String field of the class changed from this request to *"Widjaja: I like cats!"* The other fields did not change because they are static final variables. I entered in the URL as `"http://localhost:4000/add-message?s=I like cats!&user=Widjaja"` but it changed to `"http://localhost:4000/add-message?s=I%20like%20cats!&user=Widjaja"` to account for the spaces. When the query changes for `/add-message/?s=<string>&user=<string>`, the url URI object that is passed into handleRequest() also changes to reflect the contents of the url.  
@@ -111,6 +118,9 @@ and the handleRequest() methodmethod
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
+
+**String chat = "";**
+The chat object is initialized as empty everytime the server is booted up, however this may change depending on the user input in the url of the page.
 
 **.contains("/add-message")**  
 The contains method searches a String object for the argument "/add-message".  
@@ -137,10 +147,13 @@ This method starts the server with port that was parsed as an Integer and instan
 **main(String[] args)**  
 The main method that is run when running `ChatServer.java`.  
 
+**MESSAGE_START_IND = 2; USER_START_IND = 5; NEWLINE = "\n"; COLON_MESSAGE = ": "; ERROR_URL = "404 not found!";**
+These are all private static final variables that are not meant to be changed but are meant to be used in the code as a way to avoid using "Magic Numbers" for proper Java style convention.  
+<br>
+
 > How do the values of any relevant fields of the class change from this specific request?  
 
 The *chat* String field did not change from this request to the `/add-message` page, and neither did the other fields change because they are static final variables. The url did not change either as the intended (and actual) output is to simply print the *chat* String.  
-<br>
 
 # Part 2 - SSH  
 In this part of the lab, we use the **ls** command in a terminal to demonstrate our usage and understanding of SSH.
