@@ -12,11 +12,20 @@ So that's 9 total examples (3 for each command). For each, include:
 # CD
 `An example of using the command with no arguments:`
 ```bash
+1
 [user@sahara ~]$ cd
 [user@sahara ~]$ 
+
+2
+[user@sahara ~/lecture1]$ cd
+[user@sahara ~]$ 
+
+3
+[user@sahara ~/lecture1/messages]$ cd 
+[user@sahara ~]$ 
 ```
-Working directory when *cd* was run: /home  
-I got this output because I am stating to change the directory to the current directory (since there are no arguments). This output is not an error.<br><br>
+Working directory when *cd* was run: (1) /home (2) /home/lecture1 (3) /home/lecture1/messages
+We get this output because *cd* without any arguments changes the current working directory to the root or the home directory. This output is not an error.<br><br>
 
 `An example of using the command with a path to a directory as an argument:`
 ```bash
@@ -64,11 +73,14 @@ This lists all the files which have the name Hello.java in the `lecture1` folder
 `An example of using the command with no arguments.`
 ```bash
 [user@sahara ~]$ cat
-
+^C
+[user@sahara ~]$ cat
+cat
+cat
 ^C
 ```
 Working directory when *cat* was run: /home  
-I got this output because I am concatenating nothing and so it prints nothing as I did not pass an argument. This also seems to leave the terminal to be stuck as if it is running a loop (CTRL+C to back out of the running process).<br><br>
+I got this output because I am concatenating nothing and so it prints nothing as I did not pass an argument. This also seems to leave the terminal to be stuck as if it is running a loop (CTRL+C to back out of the running process). However, note that if you type *cat* without supplying an argument, and then you enter in any string of characters, the *cat* command repeats exactly what you inputed into the terminal.<br><br>
 
 `An example of using the command with a path to a directory as an argument.`
 ```bash
