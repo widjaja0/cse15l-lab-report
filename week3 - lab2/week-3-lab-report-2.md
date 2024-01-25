@@ -56,13 +56,13 @@ class ChatServer {
 **Screenshot 1:** <br>
 ![/add-message 1](image-4.png)
 
-> Which methods in the code are called?  
+> Which methods in this code are called?  
 
 ```java
-url.getPath(), .contains(), url.getQuery(), .split(), 
+url.getPath(), .contains(), url.getQuery(), .split()
 .substring(), String.format(), Integer.parseInt(), 
 Server.start(), the main() method, 
-and the handleRequest() method
+and the handleRequest() methodmethod
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
@@ -94,8 +94,8 @@ The *chat String* field of the class changed from this request to *"Widjaja: I l
 
 ```java
 url.getPath(), .contains(), url.getQuery(), String.format(), 
-Integer.parseInt(), Server.start(), the main() method, 
-and the handleRequest() methodmethod
+Integer.parseInt(), Server.start(), 
+the main() method, and the handleRequest() methodmethod
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
