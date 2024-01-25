@@ -62,7 +62,7 @@ class ChatServer {
 url.getPath(), .contains(), url.getQuery(), .split()
 .substring(), String.format(), Integer.parseInt(), 
 Server.start(), the main() method, 
-and the handleRequest() methodmethod
+and the handleRequest() method
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
@@ -95,7 +95,7 @@ The *chat String* field of the class changed from this request to *"Widjaja: I l
 ```java
 url.getPath(), .contains(), url.getQuery(), String.format(), 
 Integer.parseInt(), Server.start(), 
-the main() method, and the handleRequest() methodmethod
+the main() method, and the handleRequest() method
 ```
 
 > What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
