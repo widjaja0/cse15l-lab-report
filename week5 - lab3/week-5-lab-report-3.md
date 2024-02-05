@@ -61,6 +61,7 @@ static void reverseInPlace(int[] arr) {
 # Part 2 - Researching Commands
 In this part of the lab, we choose between `less`, `find`, and `grep` in order to find 4 options or alternative ways to use the command we choose alongside 2 examples of using said option or alternative way in code blocks. Short descriptions are provided below the examples.  
 
+Here, I chose `grep`.  
 
 
 
