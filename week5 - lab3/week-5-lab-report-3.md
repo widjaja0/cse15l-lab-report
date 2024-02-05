@@ -33,17 +33,17 @@ public void testReverseInPlace() {
 
 > Screenshots of the symptoms from using each test.  
 
-**Screenshot 1:** <br>
+> **Screenshot 1:** <br>
 ![failure-inducing input](image-2.png)
 
 ---
 
-**Screenshot 2:** <br>
+> **Screenshot 2:** <br>
 ![non-failure-inducing input](image-1.png)
 
 ---
 
-Code block before the code change.
+> Code block before the code change.
 ```java
 // Changes the input array to be in reversed order
 static void reverseInPlace(int[] arr) {
@@ -53,7 +53,7 @@ static void reverseInPlace(int[] arr) {
 }
 ```
 
-Code block after the code change.
+> Code block after the code change.
 ```java
 // Changes the input array to be in reversed order
 static void reverseInPlace(int[] arr) {
