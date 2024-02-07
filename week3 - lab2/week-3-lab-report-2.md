@@ -133,18 +133,8 @@ Widjaja: I like cats!
 Dr. Joe: Please fix your submission on Gradescope to have an example with another message.
 ```
 
-The other fields did not change because they are *static final* variables. I entered in the URL as 
-
-```
-http://localhost:4000/add-message?s=Please fix your submission on Gradescope to have an example with another message.&user=Dr.%20Joe
-``` 
-but it changed to 
-
-```
-http://localhost:4000/add-message?s=Please%20fix%20your%20submission%20on%20Gradescope%20to%20have%20an%20example
-%20with%20another%20message.&user=Dr.%20Joe"
-``` 
-to account for the spaces. When the query changes for */add-message/?s=<string>&user=<string>*, the url *URI* object that is passed into *handleRequest()* also changes to reflect the contents of the url.  
+The other fields did not change because they are *static final* variables. I entered in the URL as `http://localhost:4000/add-message?s=Please fix your submission on Gradescope to have an example with another message.&user=Dr.%20Joe` but it changed to `http://localhost:4000/add-message?s=Please%20fix%20your%20submission%20on%20Gradescope%20to%20have%20an%20example
+%20with%20another%20message.&user=Dr.%20Joe"` to account for the spaces. When the query changes for */add-message/?s=<string>&user=<string>*, the url *URI* object that is passed into *handleRequest()* also changes to reflect the contents of the url.  
 
 ---
 
