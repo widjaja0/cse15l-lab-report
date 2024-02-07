@@ -1,4 +1,4 @@
-# Lab Report 23 
+# Lab Report 3 
 <a href="https://ucsd-cse15l-w24.github.io/week5/index.html#lab-report-3---bugs-and-commands-week-5" target="_blank">INSTRUCTIONS TO THIS LAB</a>
 
 # Part 1 - Bugs  
