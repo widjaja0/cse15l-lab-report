@@ -52,7 +52,7 @@ class ChatServer {
 ```  
 <br>
 
-## Two screenshots using "/add-message":
+## Three screenshots using "/add-message" (Third screenshot is the fix from the last submission):
 **Screenshot 1:** <br>
 ![/add-message 1](image-4.png)
 
@@ -107,6 +107,44 @@ In this instance, whatever has been concatenated to *chat* while the server has 
 > How do the values of any relevant fields of the class change from this specific request?  
 
 The *chat String* field did not change from this request to the *"/add-message"* page, and neither did the other fields change because they are *static final* variables. The url did not change either as the intended (and actual) output is to simply print the *chat String*.  
+
+**Screenshot 3:** <br>
+![/add-message 3](image-6.png)
+
+> Which methods in this code are called?  
+
+```java
+url.getPath(), .contains(), url.getQuery(), String.format(), 
+Integer.parseInt(), Server.start(), 
+the main() method, and the handleRequest() method
+```
+
+> What are the relevant arguments to those methods, and the values of any relevant fields of the class?  
+
+`String chat = "";`  
+In this instance, whatever has been concatenated to the *chat String* while the server has been running will print out onto the screen.  
+<br>
+
+> How do the values of any relevant fields of the class change from this specific request?  
+
+The *chat String* field of the class changed from this request to:
+```
+Widjaja: I like cats! 
+Dr. Joe: Please fix your submission on Gradescope to have an example with another message.
+```
+
+The other fields did not change because they are *static final* variables. I entered in the URL as 
+
+```
+http://localhost:4000/add-message?s=Please fix your submission on Gradescope to have an example with another message.&user=Dr.%20Joe
+``` 
+but it changed to 
+
+```
+http://localhost:4000/add-message?s=Please%20fix%20your%20submission%20on%20Gradescope%20to%20have%20an%20example
+%20with%20another%20message.&user=Dr.%20Joe"
+``` 
+to account for the spaces. When the query changes for */add-message/?s=<string>&user=<string>*, the url *URI* object that is passed into *handleRequest()* also changes to reflect the contents of the url.  
 
 ---
 
