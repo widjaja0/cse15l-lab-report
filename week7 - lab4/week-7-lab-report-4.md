@@ -47,7 +47,7 @@ I used `ls` in order to see what files or folders were in the current working di
 ![step 7 p1](image-3.png)
 ![step 7 p2](image-4.png)
 
-> Keys pressed:
+Keys pressed:
 ```bash
 <vim L> <tab> <.> <tab> <enter>
 In vim: <10j> <10j> <10j> <10j> <3j> <w> <w>, <i> <backspace> <backspace> <2> <space> <esc>, <:wq>
@@ -60,7 +60,7 @@ I first typed out `vim L` and then `tab` in order to grab the name of the java c
 > **Screenshot:** <br>
 ![step 8](image-5.png)
 
-> Keys pressed:
+Keys pressed:
 ```bash
 <up> <up> <enter>
 ```
@@ -72,7 +72,7 @@ The `bash test.sh` command was 2 up in the command history so I just pressed the
 > **Screenshot:** <br>
 ![step 9](image-6.png)
 
-> Keys pressed:
+Keys pressed:
 ```bash
 <git a> <tab> <.> <enter>
 <git com> <tab> <-m> <space> <"fixed error"> <enter>
