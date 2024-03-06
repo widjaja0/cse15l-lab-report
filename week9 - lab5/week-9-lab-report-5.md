@@ -24,39 +24,337 @@ TA: "I am looking at our implemenations again, and they seem to be correct for t
 Student: "I found the bug! It was that I was not adding duplicates of characters in both lists to the merged list... but now I am getting another different bug! Can you help me out with this one? I suspect it has something to do with not properly clearing my static ArrayList that I created?"
 
 ### 4 - A third response from the TA.
-TA: ""
+TA: "Remember where static objects (especially when they are fields) are created in memory. Also something odd is going on with your add function that you call on your filtered ArrayList... should we prepend or append filtered values?"
 
 ### 5 - A final response from the student.
-![Correct work](image-3.png)  
-Student: "Everything works! Thank you so much!"
+![Correct work.](image-4.png)  
+Student: "OHHHHH, I fixed it. Everything works! Thank you so much!"
 
 ### 6 - A final response from the TA.
 TA: "Yeah of course, happy to help. Always remember that tutor and office hours are open for you to swing by whenever you need us."
 
 ## The setup for this scenario:
-The file and directory structure:
+### The file and directory structure:
+```
+.
+└── grader-review-widjaja0/
+    ├── grading-area/
+    │   ├── lib/
+    │   │   ├── hamcrest-core-1.3.jar
+    │   │   └── junit-4.13.2.jar
+    │   ├── ExecExamples.class
+    │   ├── ExecHelpers.class
+    │   ├── IsA.class
+    │   ├── IsMoon.class
+    │   ├── ListExamples.class
+    │   ├── ListExamples.java
+    │   ├── test-output.txt
+    │   ├── TestListExamples.class
+    │   └── TestListExamples.java
+    ├── lib/
+    │   ├── hamcrest-core-1.3.jar
+    │   └── junit-4.13.2.jar
+    ├── student-submission/
+    │   └── ListExamples.java
+    ├── gitclone-output.txt
+    ├── grade.sh
+    ├── potential-copy-error.txt
+    └── TestListExamples.java
+└──list-examples-lab5
+	└── ListExamples.java
 ```
 
-```
-
-The contents of each file before each bug:
-Before bug 1:
+### The contents of each file before each bug:  
+Before bug 1:  
+TestListExamples.java  
 ```java
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.util.Arrays;
+import java.util.List;
 
+class IsMoon implements StringChecker {
+  public boolean checkString(String s) {
+    return s.equalsIgnoreCase("moon");
+  }
+}
+
+public class TestListExamples {
+  @Test(timeout = 500)
+  public void testFilterArgumentOrder() {
+    StringChecker myStringChecker = new IsMoon();
+    List<String> myList = Arrays.asList("a", "a", "b", "c", "d");
+    List<String> emptyList = Arrays.asList();
+    List<String> filtered = ListExamples.filter(myList, myStringChecker);
+    assertEquals(emptyList, filtered);
+  }
+
+  @Test(timeout = 500)
+  public void testMergeRightEnd() {
+    List<String> left = Arrays.asList("a", "b", "c");
+    List<String> right = Arrays.asList("a", "d");
+    List<String> merged = ListExamples.merge(left, right);
+    List<String> expected = Arrays.asList("a", "a", "b", "c", "d");
+    assertEquals(expected, merged);
+  }
+
+  @Test(timeout = 500)
+  public void testMergeLeftEnd() {
+    List<String> left = Arrays.asList("a", "b", "d");
+    List<String> right = Arrays.asList("a", "c");
+    List<String> merged = ListExamples.merge(left, right);
+    List<String> expected = Arrays.asList("a", "a", "b", "c", "d");
+    assertEquals(expected, merged);
+  }
+}
 ```
 
-Before bug 2:
+ListExamples.java
 ```java
+import java.util.ArrayList;
+import java.util.List;
 
+interface StringChecker { boolean checkString(String s); }
+
+class ListExamples {
+
+  static List<String> result = new ArrayList<>();
+  // Returns a new list that has all the elements of the input list for which
+  // the StringChecker returns true, and not the elements that return false, in
+  // the same order they appeared in the input list;
+  static List<String> filter(List<String> list, StringChecker sc) {
+    if(list.size() == 0) { return list; }
+	result.clear();
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(0, s);
+      }
+    }
+    return result;
+  }
+
+
+  // Takes two sorted list of strings (so "a" appears before "b" and so on),
+  // and return a new list that has all the strings in both list in sorted order.
+  static List<String> merge(List<String> list1, List<String> list2) {
+    List<String> result = new ArrayList<>();
+    int index1 = 0, index2 = 0;
+    while(index1 < list1.size() && index2 < list2.size()) {
+      int compared = list1.get(index1).compareTo(list2.get(index2));
+      if(compared == 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+        index2 += 1;
+      }
+      else if(compared < 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+      }
+      else {
+        result.add(list2.get(index2));
+        index2 += 1;
+      }
+    }
+    while(index1 < list1.size()) {
+      result.add(list1.get(index1));
+      index1 += 1;
+    }
+    while(index2 < list2.size()) {
+      result.add(list2.get(index2));
+      index1 += 1;
+    }
+    return result;
+  }
+}
 ```
 
-Before bug 3:
+Before bug 2:  
+TestListExamples.java  
+*Same as above.*  
+
+ListExamples.java  
 ```java
+import java.util.ArrayList;
+import java.util.List;
 
+interface StringChecker { boolean checkString(String s); }
+
+class ListExamples {
+
+  static List<String> result = new ArrayList<>();
+  // Returns a new list that has all the elements of the input list for which
+  // the StringChecker returns true, and not the elements that return false, in
+  // the same order they appeared in the input list;
+  static List<String> filter(List<String> list, StringChecker sc) {
+    if(list.size() == 0) { return list; }
+	result.clear();
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(0, s);
+      }
+    }
+    return result;
+  }
+
+
+  // Takes two sorted list of strings (so "a" appears before "b" and so on),
+  // and return a new list that has all the strings in both list in sorted order.
+  static List<String> merge(List<String> list1, List<String> list2) {
+    List<String> result = new ArrayList<>();
+    int index1 = 0, index2 = 0;
+    while(index1 < list1.size() && index2 < list2.size()) {
+      int compared = list1.get(index1).compareTo(list2.get(index2));
+      if(compared == 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+        index2 += 1;
+      }
+      else if(compared < 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+      }
+      else {
+        result.add(list2.get(index2));
+        index2 += 1;
+      }
+    }
+    while(index1 < list1.size()) {
+      result.add(list1.get(index1));
+      index1 += 1;
+    }
+    while(index2 < list2.size()) {
+      result.add(list2.get(index2));
+      index2 += 1;
+    }
+    return result;
+  }
+}
 ```
 
-Full command lines ran to trigger the bugs:
-bash grade.sh https://github.com/widjaja0/list-examples-lab5.git
+Before bug 3:  
+TestListExamples.java  
+```java
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.util.Arrays;
+import java.util.List;
+
+class IsMoon implements StringChecker {
+  public boolean checkString(String s) {
+    return s.equalsIgnoreCase("moon");
+  }
+}
+
+class IsA implements StringChecker {
+  public boolean checkString(String s) {
+    return s.equalsIgnoreCase("a");
+  }
+}
+
+public class TestListExamples {
+  @Test(timeout = 500)
+  public void testFilterArgumentOrder() {
+    StringChecker myStringChecker = new IsMoon();
+    List<String> myList = Arrays.asList("a", "a", "b", "c", "d");
+    List<String> emptyList = Arrays.asList();
+    List<String> filtered = ListExamples.filter(myList, myStringChecker);
+    assertEquals(emptyList, filtered);
+  }
+
+  @Test(timeout = 500)
+  public void testFilter() {
+    StringChecker myStringCheckerA = new IsA();
+    List<String> myList = Arrays.asList("a", "a", "b", "c", "d");
+    List<String> anotherList = Arrays.asList("a", "a", "a");
+    List<String> aList = Arrays.asList("a", "a");
+    List<String> bList = Arrays.asList("a", "a", "a");
+    List<String> filtered1 = ListExamples.filter(myList, myStringCheckerA);
+    List<String> filtered2 = ListExamples.filter(anotherList, myStringCheckerA);
+    assertSame(filtered1.size(), 2);
+    assertSame(filtered2.size(), 3);
+    assertEquals(aList, filtered1);
+    assertEquals(bList, filtered2);
+  }
+
+  @Test(timeout = 500)
+  public void testMergeRightEnd() {
+    List<String> left = Arrays.asList("a", "b", "c");
+    List<String> right = Arrays.asList("a", "d");
+    List<String> merged = ListExamples.merge(left, right);
+    List<String> expected = Arrays.asList("a", "a", "b", "c", "d");
+    assertEquals(expected, merged);
+  }
+
+  @Test(timeout = 500)
+  public void testMergeLeftEnd() {
+    List<String> left = Arrays.asList("a", "b", "d");
+    List<String> right = Arrays.asList("a", "c");
+    List<String> merged = ListExamples.merge(left, right);
+    List<String> expected = Arrays.asList("a", "a", "b", "c", "d");
+    assertEquals(expected, merged);
+  }
+}
+```
+ListExamples.java
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+interface StringChecker { boolean checkString(String s); }
+
+class ListExamples {
+
+  static List<String> result = new ArrayList<>();
+  // Returns a new list that has all the elements of the input list for which
+  // the StringChecker returns true, and not the elements that return false, in
+  // the same order they appeared in the input list;
+  static List<String> filter(List<String> list, StringChecker sc) {
+    if(list.size() == 0) { return list; }
+	result.clear();
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(0, s);
+      }
+    }
+    return result;
+  }
+
+
+  // Takes two sorted list of strings (so "a" appears before "b" and so on),
+  // and return a new list that has all the strings in both list in sorted order.
+  static List<String> merge(List<String> list1, List<String> list2) {
+    List<String> result = new ArrayList<>();
+    int index1 = 0, index2 = 0;
+    while(index1 < list1.size() && index2 < list2.size()) {
+      int compared = list1.get(index1).compareTo(list2.get(index2));
+      if(compared < 0) {
+        result.add(list1.get(index1));
+        index1 += 1;
+      }
+      else {
+        result.add(list2.get(index2));
+        index2 += 1;
+      }
+    }
+    while(index1 < list1.size()) {
+      result.add(list1.get(index1));
+      index1 += 1;
+    }
+    while(index2 < list2.size()) {
+      result.add(list2.get(index2));
+      index2 += 1;
+    }
+    return result;
+  }
+}
+```
+
+### Full command lines ran to trigger the bugs:  
+Ran the command below multiple times.  
+`bash grade.sh https://github.com/widjaja0/list-examples-lab5.git`
 ```bash
 # ---------------------- SETUP ----------------------
 
@@ -184,15 +482,15 @@ else
 fi
 ```
 
-Descriptions of what to edit to fix the bugs:
+### Descriptions of what to edit to fix the bugs:  
 Bug 1:
-
+Change index2 to index1 in ListExamples.java:merge so that index2 increments correctly.
 
 Bug 2:
-
+Delete the if comparison that compares if the character from list1 = the character from list2 so it is able to add both characters from both lists even if they equal each other.
 
 Bug 3:
-
+Instantiate the ArrayList for filter in the method instead of in a static field. Also change the .add() method on the filtered ArrayList from .add(0, ...) to just .add(...) in order to append to the filtered list properly.
 
 ---
 
