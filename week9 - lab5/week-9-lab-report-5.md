@@ -1,7 +1,7 @@
-# Lab Report 4 
-<a href="https://ucsd-cse15l-w24.github.io/week7/index.html#lab-report-4---vim-week-7" target="_blank">INSTRUCTIONS TO THIS LAB</a>
+# Lab Report 5 
+<a href="https://ucsd-cse15l-w24.github.io/week9/index.html#lab-report-5---putting-it-all-together-week-9" target="_blank">INSTRUCTIONS TO THIS LAB</a>
 
-# Part 1 - Speeding up Command Line Tasks  
+# Part 1 - Debugging Scenario  
 In this lab (lab report 4), we present our navigation throughout vim and the terminal in order to achieve command line proficiencies which may enable us to more efficiently navigate the terminal and vim.
 <br>
 
