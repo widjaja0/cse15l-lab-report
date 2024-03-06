@@ -5,14 +5,12 @@
 In this lab (lab report 5), we simulate a scenario where we debug another student's code that produces an error in Java. We design a debugging scenario and we imagine a conversation on Edstem to write this report.
 <br>
 
-Design a debugging scenario, and write your report as a conversation on EdStem. It should have:
+### 1 - The original post from a student.
+![Symptom from User](image-1.png)  
+Student: "When I am running my code through the autograder, I get an output that tells me that a test timed out. Does this mean that my code has an infinite loop somewhere??"  
 
-1. The original post from a student with a screenshot showing a symptom and a description of a guess at the bug/some sense of what the failure-inducing input is. (Don't actually make the post! Just write the content that would go in such a post)
-Screenshot showing a symptom
-A description of a guess at the bug from the student
-
-2. A response from a TA asking a leading question or suggesting a command to try (To be clear, you are mimicking a TA here.)
-A response from a TA asking a leading question or suggesting a command to try
+### 2 - A response from the TA.
+TA: "There seems to be two errors happening in your code. Have you tried checking that all variables (local or field) get implemented properly within your loops?"
 
 3. Another screenshot/terminal output showing what information the student got from trying that, and a clear description of what the bug is.
 3. Screenshot showing what info the student got from running the suggested command
